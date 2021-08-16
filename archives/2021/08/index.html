@@ -1,62 +1,245 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post-collapse.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Archives: 2021/8 | sunflowers&#39;s Blog</title>
 
-{% block title %}{{ __('title.archive') }} | {{ config.title }}{% endblock %}
+  <!-- keywords -->
+  
 
-{% block page_class %}page-archive{% endblock %}
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="sunflowers&#39;s Blog">
+<meta property="og:url" content="http://www.sunflowers.vip/archives/2021/08/index.html">
+<meta property="og:site_name" content="sunflowers&#39;s Blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="麻瓜">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="sunflowers&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/1.jpg">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
-{% block content %}
+  
+  
 
-  {#####################}
-  {### ARCHIVE BLOCK ###}
-  {#####################}
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
 
-      <span class="archive-page-counter">
-        {% set cheers %}
-        {% set posts_length = site.posts.length %}
-        {% if posts_length > 210 %} {% set cheers = 'excellent' %}
-          {% elif posts_length > 130 %} {% set cheers = 'great' %}
-          {% elif posts_length > 80 %} {% set cheers = 'good' %}
-          {% elif posts_length > 50 %} {% set cheers = 'nice' %}
-          {% elif posts_length > 30 %} {% set cheers = 'ok' %}
-        {% else %}
-          {% set cheers = 'um' %}
-        {% endif %}
-        {{ __('cheers.' + cheers) }}! {{ _p("counter.archive_posts", site.posts.length) }} {{ __('keep_on') }}
-      </span>
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 
-      {% for post in page.posts %}
 
-        {# Show year #}
-        {% set year %}
-        {% set post.year = date(post.date, 'YYYY') %}
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="[object Object]" class="js-avatar">
+			
+		</a>
 
-        {% if post.year !== year %}
-          {% set year = post.year %}
-          <div class="collection-title">
-            <{% if theme.seo %}h2{% else %}h1{% endif %} class="archive-year" id="archive-year-{{ year }}">{{ year }}</{% if theme.seo %}h2{% else %}h1{% endif %}>
-          </div>
-        {% endif %}
-        {# endshow #}
+		<hgroup>
+			<h1 class="header-author"><a href="/">麻瓜</a></h1>
+		</hgroup>
 
-        {{ post_template.render(post) }}
+		
+			<p class="header-subtitle"></p>
+		
 
-      {% endfor %}
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">Home</a></li>
+				        
+							<li><a href="/archives">Archives</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+						<!-- music -->
+						
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
 
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">零碎的岛屿终会找到海</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="[object Object]" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">Home</a></li>
+		        
+					<li><a href="/archives">Archives</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap">
+  
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2021" class="archive-year">2021</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/sunflower/" class="archive-article-date">
+  	<time datetime="2021-08-15T08:43:43.000Z" itemprop="datePublished">8月 15</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/sunflower/">
+        sunflower
+        
+      </a>
+    </h1>
+  
+
+        <div class="article-info info-on-left">
+          
+          
+
+          
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+  
+    </div></section>
+  
+
+    
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2021 麻瓜
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+        </div>
     </div>
   </div>
-  {#########################}
-  {### END ARCHIVE BLOCK ###}
-  {#########################}
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
 
-  {% include '_partials/pagination.swig' %}
 
-{% endblock %}
 
-{% block sidebar %}
-  {{ sidebar_template.render(false) }}
-{% endblock %}
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: false,
+		isArchive: true,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+  </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<!--单击显示文字-->
+<script type="text/javascript" src="/js/click_show_text.js"></script>
+<!--浏览器搞笑标题-->
+<script type="text/javascript" src="\js\FunnyTitle.js"></script>
+<!-- 雪花特效 -->
+<script type="text/javascript" src="\js\snow.js"></script>
