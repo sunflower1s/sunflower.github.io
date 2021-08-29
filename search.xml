@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>sunflower</title>
+    <title>Powershell入门学习</title>
     <url>/PowerShell/</url>
     <content><![CDATA[<h3 id="PowerShell入门学习"><a href="#PowerShell入门学习" class="headerlink" title="PowerShell入门学习"></a><strong>PowerShell入门学习</strong></h3><h4 id="PowerShell简介"><a href="#PowerShell简介" class="headerlink" title="PowerShell简介"></a>PowerShell简介</h4><p>PowerShell是一种命令行外壳程序和脚本环境，使命令行用户和脚本编写者可以利用. NET Framework的强大功能。它的脚本后缀为.ps1。PowerShell脚本可以运行在内存中，不需要写入磁盘。</p>
 <h4 id="PowerShell命令"><a href="#PowerShell命令" class="headerlink" title="PowerShell命令"></a>PowerShell命令</h4><p><strong>查询当前执行策略</strong>：Get-ExecutionPolicy</p>
@@ -38,7 +38,7 @@
 <p><strong>清除内容：</strong>clear-content test.txt</p>
 ]]></content>
       <tags>
-        <tag>powershell入门学习</tag>
+        <tag>powershell</tag>
       </tags>
   </entry>
 </search>
